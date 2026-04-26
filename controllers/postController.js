@@ -16,6 +16,7 @@ const getPosts = async (req, res) => {
 const addPost = async (req, res) => {
   // Grab data from request body
   const { title, body } = req.body;
+  const userId = req.user._id; // Get from authenticated request (from middleware)
 
   // Check the fields are not empty
   if (!title || !body) {
@@ -23,8 +24,7 @@ const addPost = async (req, res) => {
   }
 
   try {
-    const post = await Post.create({ title, body });
-
+    const post = await Post.create({ title, body, user: userId });
     res.status(200).json({ success: "Post created", post });
   } catch (error) {
     res.status(500).json({ error: error.message });

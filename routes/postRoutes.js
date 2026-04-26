@@ -6,6 +6,7 @@ import {
   deletePost,
   updatePost,
 } from "../controllers/postController.js";
+import auth from "../middlewares/auth.js";
 
 const router = express.Router();
 // route -> http methods + url path ('/') + controller/handler function (getPosts)
@@ -14,12 +15,12 @@ const router = express.Router();
 router.get("/", getPosts); // GET
 
 // Create new post route
-router.post("/", addPost); //POST
+router.post("/", auth, addPost); //POST
 
 //Delete posts
-router.delete("/:id", deletePost); //DELETE
+router.delete("/:id",auth, deletePost); //DELETE
 
 // Update post route
-router.put("/:id", updatePost); // PUT
+router.put("/:id",auth, updatePost); // PUT
 
 export { router as postRoutes };
