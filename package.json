@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/pradcodex/mern_crud#readme",
   "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.1037.0",
     "bcryptjs": "^3.0.3",
     "dotenv": "^17.4.1",
     "express": "^5.2.1",

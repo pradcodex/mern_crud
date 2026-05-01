@@ -18,9 +18,9 @@ router.get("/", getPosts); // GET
 router.post("/", auth, addPost); //POST
 
 //Delete posts
-router.delete("/:id",auth, deletePost); //DELETE
+router.delete("/:id", auth, deletePost); //DELETE
 
 // Update post route
-router.put("/:id",auth, updatePost); // PUT
+router.put("/:id", auth, updatePost); // PUT
 
 export { router as postRoutes };

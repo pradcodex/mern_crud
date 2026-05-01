@@ -11,11 +11,11 @@ app.use("/api/posts", postRoutes);
 app.use("/api/users", usersRoutes);
 
 mongoose
-  .connect(process.env.MONGO_URL, { dbName: "demo_db" })
-  .then(() => {
-    console.log("Connected to DB");
-    app.listen(3000, () => {
-      console.log("Server running on port 3000");
-    });
-  })
-  .catch((err) => console.log(err));
+.connect(process.env.MONGO_URL, { dbName: "demo_db" })
+   .then(() => {
+     console.log("Connected to DB");
+     app.listen(3000, () => {
+     console.log("Server running on port 3000");
+     });
+   })
+   .catch((err) => console.log(err));
